@@ -18,20 +18,20 @@ import { mainListItems, secondaryListItems } from './listItems';
 import SimpleLineChart from './SimpleLineChart';
 import SimpleTable from './SimpleTable';
 
-const drawerWidth = 270;
+const drawerWidth = 290;
 
 const styles = (theme) => ({
   root: {
     display: 'flex',
   },
   toolbar: {
-    paddingRight: -10, // keep right padding when drawer closed
+    paddingRight: 24, // keep right padding when drawer closed
   },
   toolbarIcon: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',
-    padding: '0 12px',
+    padding: '0 8px',
     ...theme.mixins.toolbar,
   },
   appBar: {
@@ -177,7 +177,7 @@ class Dashboard extends React.Component {
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
           <Typography variant="h4" gutterBottom component="h2">
-            Production status
+            Orders
           </Typography>
           <Typography component="div" className={classes.chartContainer}>
             <SimpleLineChart />
