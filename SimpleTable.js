@@ -19,17 +19,16 @@ const styles = {
 };
 
 let id = 0;
-function createData(name, calories, fat, carbs, protein) {
+function createData(country, plantno, plant, line, station, product) {
   id += 1;
-  return { id, name, calories, fat, carbs, protein };
+  return { id, country, plantno, plant, line, station, product };
 }
 
 const data = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('TR', 9002, 'CORLU', 'PRD-01', 'Filler', '118-300'),
+  createData('TR', 9002, 'CORLU', 'PRD-01', 'Filler', '118-300'),
+  createData('TR', 9002, 'CORLU', 'PRD-01', 'Filler', '118-300'),
+  createData('TR', 9002, 'CORLU', 'PRD-01', 'Filler', '118-300'),
 ];
 
 function SimpleTable(props) {
@@ -40,22 +39,27 @@ function SimpleTable(props) {
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat (g)</TableCell>
-            <TableCell align="right">Carbs (g)</TableCell>
-            <TableCell align="right">Protein (g)</TableCell>
+            <TableCell></TableCell>
+            <TableCell align="right">Country</TableCell>
+            <TableCell align="right">Plant No</TableCell>
+            <TableCell align="right">Plant</TableCell>
+            <TableCell align="right">Line</TableCell>
+            <TableCell align="right">Station</TableCell>
+            <TableCell align="right">Product No</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.map(n => (
+          {data.map((n) => (
             <TableRow key={n.id}>
               <TableCell component="th" scope="row">
                 {n.name}
               </TableCell>
-              <TableCell align="right">{n.calories}</TableCell>
-              <TableCell align="right">{n.fat}</TableCell>
-              <TableCell align="right">{n.carbs}</TableCell>
+              <TableCell align="right">{n.country}</TableCell>
+              <TableCell align="right">{n.plantno}</TableCell>
+              <TableCell align="right">{n.plant}</TableCell>
+              <TableCell align="right">{n.line}</TableCell>
+              <TableCell align="right">{n.station}</TableCell>
+              <TableCell align="right">{n.product}</TableCell>
               <TableCell align="right">{n.protein}</TableCell>
             </TableRow>
           ))}
