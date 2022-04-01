@@ -18,7 +18,7 @@ import { mainListItems, secondaryListItems } from './listItems';
 import SimpleLineChart from './SimpleLineChart';
 import SimpleTable from './SimpleTable';
 
-const drawerWidth = 270;
+const drawerWidth = 340;
 
 const styles = (theme) => ({
   root: {
@@ -177,13 +177,7 @@ class Dashboard extends React.Component {
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
           <Typography variant="h4" gutterBottom component="h2">
-            Production status
-          </Typography>
-          <Typography component="div" className={classes.chartContainer}>
-            <SimpleLineChart />
-          </Typography>
-          <Typography variant="h4" gutterBottom component="h2">
-            Products
+            Stoppages
           </Typography>
           <div className={classes.tableContainer}>
             <SimpleTable />

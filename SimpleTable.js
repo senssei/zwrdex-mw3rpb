@@ -19,16 +19,26 @@ const styles = {
 };
 
 let id = 0;
-function createData(country, plantno, plant, line, station, product) {
+function createData(start_time, end_time, duration, type, reason) {
   id += 1;
-  return { id, country, plantno, plant, line, station, product };
+  return { start_time, end_time, duration, type, reason };
 }
 
 const data = [
-  createData('TR', 9002, 'CORLU', 'PRD-01', 'Filler', '118-300'),
-  createData('TR', 9002, 'CORLU', 'PRD-01', 'Filler', '118-300'),
-  createData('TR', 9002, 'CORLU', 'PRD-01', 'Filler', '118-300'),
-  createData('TR', 9002, 'CORLU', 'PRD-01', 'Filler', '118-300'),
+  createData(
+    '05.11.2021 14:15',
+    '05.11.2021 14:15',
+    '145 sec.',
+    'Planned',
+    'Power cut'
+  ),
+  createData('05.11.2021 14:15', '05.11.2021 14:15', '145 sec.', '-', '-'),
+  createData('05.11.2021 14:15', '05.11.2021 14:15', '145 sec.', '-', '-'),
+  createData('05.11.2021 14:15', '05.11.2021 14:15', '145 sec.', '-', '-'),
+  createData('05.11.2021 14:15', '05.11.2021 14:15', '145 sec.', '-', '-'),
+  createData('05.11.2021 14:15', '05.11.2021 14:15', '145 sec.', '-', '-'),
+  createData('05.11.2021 14:15', '05.11.2021 14:15', '145 sec.', '-', '-'),
+  createData('05.11.2021 14:15', '05.11.2021 14:15', '145 sec.', '-', '-'),
 ];
 
 function SimpleTable(props) {
@@ -39,28 +49,21 @@ function SimpleTable(props) {
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell></TableCell>
-            <TableCell align="right">Country</TableCell>
-            <TableCell align="right">Plant No</TableCell>
-            <TableCell align="right">Plant</TableCell>
-            <TableCell align="right">Line</TableCell>
-            <TableCell align="right">Station</TableCell>
-            <TableCell align="right">Product No</TableCell>
+            <TableCell align="right">Start Time</TableCell>
+            <TableCell align="right">End Time</TableCell>
+            <TableCell align="right">Duration</TableCell>
+            <TableCell align="right">Type</TableCell>
+            <TableCell align="right">Reason</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {data.map((n) => (
             <TableRow key={n.id}>
-              <TableCell component="th" scope="row">
-                {n.name}
-              </TableCell>
-              <TableCell align="right">{n.country}</TableCell>
-              <TableCell align="right">{n.plantno}</TableCell>
-              <TableCell align="right">{n.plant}</TableCell>
-              <TableCell align="right">{n.line}</TableCell>
-              <TableCell align="right">{n.station}</TableCell>
-              <TableCell align="right">{n.product}</TableCell>
-              <TableCell align="right">{n.protein}</TableCell>
+              <TableCell align="right">{n.start_time}</TableCell>
+              <TableCell align="right">{n.end_time}</TableCell>
+              <TableCell align="right">{n.duration}</TableCell>
+              <TableCell align="right">{n.type}</TableCell>
+              <TableCell align="right">{n.reason}</TableCell>
             </TableRow>
           ))}
         </TableBody>
